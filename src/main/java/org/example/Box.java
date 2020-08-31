@@ -23,16 +23,20 @@ public class Box<F extends Fruit> {
         return getWeight() == anotherBox.getWeight();
     }
 
-    public void moveTo(Box<F> anotherBox) {
+    public boolean moveTo(Box<F> anotherBox) {
         anotherBox.box.addAll(box);
         box.clear();
+        return true;
     }
 
-    public void addFruit(F fruit, int amount) {
+    public boolean addFruit(F fruit, int amount) {
         for
         (int i = 0; i < amount; i++) {
             box.add(fruit);
         }
+
+        return true;
+
     }
 }
 
